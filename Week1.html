@@ -21,32 +21,39 @@
 
 <body>
     <script>
+        var admin = false;
+        var count = 0;
+
         function establishRectangle() {
-            var width = (Math.random() * 10);
+            var width = ((Math.random() * 100));
             //console.log(width);
-            var height = (Math.random() * 10);
+            var height = ((Math.random() * 100));
             //console.log(height);
-            var locationX = (Math.random() * 10);
-            var locationY = (Math.random() * 10);
+            var locationX = (Math.random() * 150);
+            var locationY = (Math.random() * 150);
             var rectangle = {
                 width: width,
                 height: height,
                 locationX: locationX,
                 locationY: locationY,
                 color: getRandomColor()
-            }
+            };
             //console.log(rectangle.color);
             drawRectangle(rectangle);
         }
-        function drawRectangle(R){
-            
+
+        function drawRectangle(rectangle) {
+
             var c = document.getElementById("drawSpace");
             var ctx = c.getContext("2d");
             ctx.beginPath();
+            var colorString = rectangle.color;
+            ctx.fillStyle = rectangle.color;
 
 
 
-            ctx.rect(R.locationX, R.locationY, R.width, r.height); //replace numbers with rectangle object
+            ctx.fillRect(rectangle.locationX, rectangle.locationY, rectangle.width, rectangle
+                .height); //replace numbers with rectangle object
             ctx.stroke();
         }
 
@@ -56,29 +63,51 @@
             for (var i = 0; i < 6; i++) {
                 color += letters[Math.floor(Math.random() * 16)];
             }
+
             return color;
+
         }
+
 
         function makeRectangle() {
-            changeButtonText(); //maybe put a param here to demonstrate that?
-            //create the rectangle object
-            establishRectangle();
+            count++;
+            if (admin == false) {
+                changeButtonText(); //maybe put a param here to demonstrate that?
+                
+            }
+            if (count > 3 && admin == false) {
 
-           
+                return;
+            } else {
+                //create the rectangle object
+                establishRectangle();
+            }
 
         }
 
-        var count = 1;
-        var permissionRevoked = false;
+
+
+        function newAdminButton() {
+            var btn = document.createElement("BUTTON");
+            btn.innerHTML = "Administrative Rectangle Creation Device\n or ARCD for short";
+            btn.onclick = function () {
+                makeRectangle();
+            };
+            document.body.appendChild(btn);
+            admin = true;
+        }
+
 
         function changeButtonText() {
+
             var newText = "Click again for another!";
-            if (count > 1) {
+            if (count > 1 && admin == false) {
                 newText = "You have abused your clicking priveledges and will receive no more rectangles.";
-                permissionRevoked = true;
+                newAdminButton();
+
             }
             document.getElementById("rectangleMaker").innerHTML = newText;
-            count++;
+
 
         }
     </script>
