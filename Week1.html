@@ -1,0 +1,93 @@
+<!-- //loops
+//conditional 
+//function
+//variables
+//params
+//arrays
+//objects
+//inheritance
+//method
+//instantiation
+
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavsScript demo</title>
+</head>
+
+
+<body>
+    <script>
+        function establishRectangle() {
+            var width = (Math.random() * 10);
+            //console.log(width);
+            var height = (Math.random() * 10);
+            //console.log(height);
+            var locationX = (Math.random() * 10);
+            var locationY = (Math.random() * 10);
+            var rectangle = {
+                width: width,
+                height: height,
+                locationX: locationX,
+                locationY: locationY,
+                color: getRandomColor()
+            }
+            //console.log(rectangle.color);
+            drawRectangle(rectangle);
+        }
+        function drawRectangle(R){
+            
+            var c = document.getElementById("drawSpace");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+
+
+
+            ctx.rect(R.locationX, R.locationY, R.width, r.height); //replace numbers with rectangle object
+            ctx.stroke();
+        }
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function makeRectangle() {
+            changeButtonText(); //maybe put a param here to demonstrate that?
+            //create the rectangle object
+            establishRectangle();
+
+           
+
+        }
+
+        var count = 1;
+        var permissionRevoked = false;
+
+        function changeButtonText() {
+            var newText = "Click again for another!";
+            if (count > 1) {
+                newText = "You have abused your clicking priveledges and will receive no more rectangles.";
+                permissionRevoked = true;
+            }
+            document.getElementById("rectangleMaker").innerHTML = newText;
+            count++;
+
+        }
+    </script>
+
+    <button type="button" id="rectangleMaker" onclick="makeRectangle()">Click here to make a new rectangle</button>
+
+    <canvas id="drawSpace" width="auto" height="auto" style="border:1px solid #d3d3d3;"> </canvas>
+
+
+</body>
+
+</html>
