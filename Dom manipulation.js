@@ -25,14 +25,12 @@
 
    function listColor(rectangle) {
        var colorNode = document.createElement("LI");
-       var message = (rectangle.color)
-       var text = document.createTextNode(message);
-       colorNode.appendChild(text);
+       
 
        if (background == true) {
-
-           message = (rectangle.color + " <- Background color")
-           var text = document.createTextNode(message);
+          
+            message = (rectangle.color + " <- Background color")
+            text = document.createTextNode(message);
            colorNode.appendChild(text);
 
            colorList = document.getElementById("colorList");
@@ -43,7 +41,9 @@
 
 
        } else {
-
+        message = (rectangle.color)
+        text = document.createTextNode(message);
+      colorNode.appendChild(text);
 
 
            document.getElementById("colorList").appendChild(colorNode).style.color = rectangle.color;
