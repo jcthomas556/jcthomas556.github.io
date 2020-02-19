@@ -1,0 +1,76 @@
+<!-- This builds a form that you can fill out which fills a JSON array object with more than 1 JSON objects. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSON Demo</title>
+
+</head>
+
+
+<body>
+    
+    <script src="JSON.js"></script>
+
+    <h1>Person 1</h1>
+    <form class = "form">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        
+        <label for="age">Age:</label><br>
+        <input type="text" id="age" name="age"><br>
+        
+        <label for="favColor1">First Favorite Color:</label><br>
+        <input type="text" id="favColor1" name="favColor"><br>
+        
+        <label for="favColor2">Second Favorite Color:</label><br>
+        <input type="text" id="favColor2" name="favColor"><br>
+        
+        <label for="favColor3">Third Favorite Color:</label><br>
+        <input type="text" id="favColor3" name="favColor"><br>
+        
+
+    </form>
+
+    <h1>Person 2</h1>
+
+    <form class = "form">
+        <label for="2fname">First name:</label><br>
+        <input type="text" id="2fname" name="fname"><br>
+
+        <label for="2lname">Last name:</label><br>
+        <input type="text" id="2lname" name="lname"><br>
+        
+        <label for="2age">Age:</label><br>
+        <input type="text" id="2age" name="2age"><br>
+        
+        <label for="2favColor1">First Favorite Color:</label><br>
+        <input type="text" id="2favColor1" name="favColor"><br>
+        
+        <label for="2favColor2">Second Favorite Color:</label><br>
+        <input type="text" id="2favColor2" name="favColor"><br>
+        
+        <label for="2favColor3">Third Favorite Color:</label><br>
+        <input type="text" id="2favColor3" name="favColor"><br>
+        
+
+    </form>
+
+<br><br>
+<br><br>
+
+<h2 id="printBox"></h2>
+
+<button type="button" id="save" onclick="save()">Save</button>
+
+
+
+
+</body>
+
+</html>
