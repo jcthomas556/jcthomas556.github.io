@@ -24,6 +24,8 @@ function save() {
         '{"Secfname":" ' +Secfname+ ' ","Seclname":" ' +Seclname+ ' ","Secage":" ' +Secage+ '","SecfavColor1": '+SecfavColor1+'","SecfavColor2": '+SecfavColor2+'","SecfavColor3": '+SecfavColor3+'" },';
 
     document.getElementById("printBox").innerText = people;
+  
+    
         
 }
 
