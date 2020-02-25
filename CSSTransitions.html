@@ -1,0 +1,103 @@
+<!-- This builds a form that you can fill out which fills a JSON array object with more than 1 JSON objects. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Transitions Demo</title>
+
+    <style>
+        .textWonky {
+            width: 800px;
+            height: 50px;
+            transition: width 2s, height 4s;
+            background-color: cadetblue;
+        }
+
+        .transition {
+
+            background-color: coral;
+
+        }
+
+        .transitionShrink {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: width 2s;
+        }
+        .growSlow{
+            height:500px;
+            width:500px;
+            border-radius:100%;
+            display:inline-block;
+            transition: all 10s ease-in-out;
+            transform: scale(19.6);
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>CSS Transitions Demo</h1>
+    <script src="CSSTransitions.js"></script>
+
+
+    <div class="movable" id="rectangle" onClick="textWonky()">
+        <table class="movable">
+            <tr>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+            <tr>
+                <td>Ernst Handel</td>
+                <td>Roland Mendel</td>
+                <td>Austria</td>
+            </tr>
+            <tr>
+                <td>Island Trading</td>
+                <td>Helen Bennett</td>
+                <td>UK</td>
+            </tr>
+            <tr>
+                <td>Laughing Bacchus Winecellars</td>
+                <td>Yoshi Tannamuri</td>
+                <td>Canada</td>
+            </tr>
+            <tr>
+                <td>Magazzini Alimentari Riuniti</td>
+                <td>Giovanni Rovelli</td>
+                <td>Italy</td>
+            </tr>
+        </table>
+    </div>
+
+    <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>
+
+    <div class="movable" style="width:500px;height:100px;border:3px solid #000;" id="rectangle" onmouseover="smallColoredSquare()">
+        <p>Mouse over Me</p>
+    </div>
+    <br>   <br>   <br>   <br>   <br>   <br>   <br>   <br>
+    <span class="movable" style="height:100px;width:100px;border-radius:50%;display:inline-block;" id="circle" onmouseover="growSlow()"
+    ></span>
+    <br><br><br> 
+    <button type="button" id="clickTrigger" onclick="findTheCircle()">Find the circle</button>
+
+
+
+
+</body>
+
+</html>
