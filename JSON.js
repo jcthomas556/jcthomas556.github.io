@@ -19,11 +19,38 @@ function save() {
     var SecfavColor3 = document.getElementById("2favColor3").value;
 
     //var source = document.getElementsByClassName('.form')[0];
-    var people = '{"people":[' +
-        '{"firstName":" ' + fname + ' ","lastName":" ' + lname + ' ","age":" ' + age + '","favColor1": ' + favColor1 + '","favColor2": ' + favColor2 + '","favColor3": ' + favColor3 + '" },' +
-        '{"Secfname":" ' + Secfname + ' ","Seclname":" ' + Seclname + ' ","Secage":" ' + Secage + '","SecfavColor1": ' + SecfavColor1 + '","SecfavColor2": ' + SecfavColor2 + '","SecfavColor3": ' + SecfavColor3 + '" },';
+var person1 ={
+    "firstName":fname,
+    "lastName":lname,
+    "age" : age,
+    "favColor1": favColor1,
+    "favColor2":favColor2,
+    "favColor3": favColor3
+};
 
-    document.getElementById("printBox").innerText = people;
+var person2 ={
+    "Secfname":Secfname,
+    "Seclname":Seclname,
+    "Secage" : Secage,
+    "SecfavColor1": SecfavColor1,
+    "SecfavColor2":SecfavColor2,
+    "SecfavColor3": SecfavColor3
+};
+
+
+    // var people = '{"people":[' +
+    //     '{"firstName":" ' + fname + ' ","lastName":" ' + lname + ' ","age":" ' + age + '","favColor1": ' + favColor1 + '","favColor2": ' + favColor2 + '","favColor3": ' + favColor3 + '" },' +
+    //     '{"Secfname":" ' + Secfname + ' ","Seclname":" ' + Seclname + ' ","Secage":" ' + Secage + '","SecfavColor1": ' + SecfavColor1 + '","SecfavColor2": ' + SecfavColor2 + '","SecfavColor3": ' + SecfavColor3 + '" },';
+
+    var people = [];
+    people.push(person1);
+    people.push(person2);
+    console.log(people);
+
+    var message = "Hello " + people[0].firstName + ", You are " + people[0].age + " years old, your friend, " + people[1].Secfname + " is " + people[1].Secage + " years old.";
+    var message2 = " By the way, " + people[0].favColor1 + " and " + people[1].SecfavColor1 + " are two of the worst colors. Just saying."; 
+
+    document.getElementById("printBox").innerText = message + message2;
 
 
 
