@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        .searchBar {
+            width: 100px;
+            height: 20px;
+            padding: 15px 25px;
+            margin-top: 15px;
+            color: black;
+            font-size: 22px;
+            border-radius: 15px;
+            border: none;
+            transition: all ease-in-out 2s;
+        }
+
+        #yellow {
+            background: lightcoral;
+            transition-timing-function: ease-in;
+        }
+
+        input[type=text].searchBar:focus {
+            width: 165px;
+            outline: none;
+            background: #fff;
+            border: 3px solid #999;
+        }
+
+        #yellow:focus {
+            background: red;
+            transform: rotate(360deg);
+        }
+
+        #blue {
+            background: lightblue;
+            transition-timing-function: ease-in;
+        }
+
+        #blue:focus {
+            background: blue;
+            transform: rotate(-360deg);
+        }
+
+        #circle:hover {
+            height: 500px;
+            width: 500px;
+            border-radius: 100%;
+            display: inline-block;
+            transition: all 10s ease-in-out;
+            transform: scale(19.6);
+        }
+        #rectangle:hover {
+            height: 500px;
+            width: 500px;
+            border-radius: 100%;
+            display: inline-block;
+            transition: all 3s ease-out;
+            transform: skew(15deg, 15deg)
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <input class="searchBar" id="yellow" type="text" value="Click me">
+    <br />
+    <input class="searchBar" id="blue" type="text" value="Click me">
+    <br><br><br><br>
+    <p>Hover on the circle, but don't stay too long</p>
+    <span class="movable"
+        style="height:200px;width:200px;border-radius:50%;display:inline-block;background-color: royalblue;" id="circle"></span>
+
+    <br><br><br><br>
+    <div class="movable" style="width:500px;height:100px;border:3px solid purple;" id="rectangle">
+        <p>hover here too</p>
+    </div>
+
+</body>
+
+
+</html>
