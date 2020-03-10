@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        body {
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .ball {
+            position: absolute;
+            top: 390px;
+            border-radius: 100%;
+            overflow: hidden;
+            margin-left: 405px;
+            
+        }
+        .ballAnimation{
+            animation-name: dribble;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes dribble {
+
+
+            20% {
+                transform: rotate(10deg) translateX(15px) translateY(-60px) scale(.6);
+            }
+
+            40% {
+                transform: rotate(15deg) translateX(40px) translateY(-10px)scale(.5);
+            }
+
+            60% {
+                transform: translateX(60px) translateY(-60px)scale(.4);
+            }
+
+            80% {
+                transform: rotate(15deg) translateX(80px) translateY(-20px)scale(.2);
+            }
+
+            100% {
+                transform: rotate(15deg) translateX(80px) translateY(-20px)scale(.2);
+            }
+        }
+
+        #goal {
+            position: absolute;
+            top: 310px;
+            margin-left: 530px;
+        }
+
+        #preKickBack {
+            position: absolute;
+            top: 380px;
+            margin-left: 535px;
+        }
+
+        #preKickFront {
+            position: absolute;
+            top: 390px;
+            margin-left: 300px;
+        }
+
+        .field {
+            margin: auto;
+            height: 700px;
+            width: 80%;
+            border: 3px solid green;
+            background-color: green;
+
+        }
+
+        #kicking {
+            position: absolute;
+            top: 390px;
+            margin-left: 270px;
+        }
+    </style>
+
+</head>
+
+<body onload="hideKicker()">
+
+    <div class="field">
+        <img class="ball" src="ball2.png" height="100" width="100">
+        <img id="preKickBack" src="preKick.png" height="70" width="50">
+        <img id="preKickFront" src="preKick.png" height="200" width="180" onmousedown="triggerKick()">
+        <img id="kicking" src="kicking.png" height="200" width="180" onmouseup="reverse()">
+        <img id="goal" src="goal.png" height="60" width="120">
+
+    </div>
+
+
+    <script>
+        function hideKicker() {
+            document.getElementById("kicking").style.visibility = "hidden";
+        }
+
+        function triggerKick() {
+
+            document.getElementById("preKickFront").style.visibility = "hidden";
+            document.getElementById("kicking").style.visibility = "visible";
+
+            var elements = document.getElementsByClassName("ball");
+            elements[0].classList.toggle("ballAnimation");
+        }
+
+        function reverse() {
+            document.getElementById("kicking").style.visibility = "hidden";
+            document.getElementById("preKickFront").style.visibility = "visible";
+        }
+    </script>
+
+</body>
+
+
+</html>
