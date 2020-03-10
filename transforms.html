@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        .searchBar {
+            height: 20px;
+            padding: 15px 25px;
+            margin-top: 15px;
+            color: black;
+            font-size: 22px;
+            border-radius: 15px;
+            border: none;
+            transition: all ease-in-out 2s;
+        }
+
+        #yellow {
+            background: lightcoral;
+            transition-timing-function: ease-in;
+        }
+
+        input[type=text].searchBar:hover {
+            width: 165px;
+            outline: none;
+            background: #fff;
+            border: 3px solid #999;
+        }
+
+        #yellow:hover {
+            background: red;
+            transform: rotate(360deg);
+        }
+
+        #blue {
+            background: lightblue;
+            transition-timing-function: ease-in;
+        }
+
+        #blue:hover {
+            background: blue;
+            transform: rotate(-360deg);
+        }
+
+        #circle:hover {
+            height: 500px;
+            width: 500px;
+            border-radius: 100%;
+            display: inline-block;
+            
+            transform: scale(5.6);
+        }
+        #circle2:hover {
+            height: 500px;
+            width: 500px;
+            border-radius: 100%;
+            display: inline-block;
+            
+            transform: scale(.4);
+        }
+        #rectangle:hover {
+            height: 500px;
+            width: 500px;
+            border-radius: 100%;
+            display: inline-block;
+            transition: all 3s ease-out;
+            transform: skew(15deg, 15deg)
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <input class="searchBar" id="yellow" type="text" value="Transform: Rotate">
+    <br />
+    <input class="searchBar" id="blue" type="text" value="Transform: Rotate">
+    <br><br><br><br>
+    <p>Grow or shring circles by hovering</p>
+    <span class="movable"
+        style="height:200px;width:200px;border-radius:50%;display:inline-block;background-color: royalblue;" id="circle"></span>
+        <span class="movable"
+        style="height:200px;width:200px;border-radius:50%;display:inline-block;background-color: red;" id="circle2"></span>
+
+
+    <br><br><br><br>
+    <div class="movable" style="width:500px;height:100px;border:3px solid purple;" id="rectangle">
+        <p>hover here too</p>
+    </div>
+
+</body>
+
+
+</html>
