@@ -3,12 +3,13 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="IMJB.css">
+    <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
     <title>Weather App</title>
 </head>
 
-<body>
+<body class ="fonts">
 
-
+<div>
     <div id="searchTools" class="center">
         <h1>Type in your city name</h1>
         <input type="text" id="mName" value="">
@@ -17,15 +18,23 @@
     </div>
 
     <div id="GeneralWeather" class="unloaded center main">
-        <p>The weather this evening is </p>
+        <h2>The weather right now is</h2>
         <p id="weatherMain"></p>
+        <p>The temperature is</p>
+        <p id="temperature"></p>
+        <p>But we think it feels more like</p>
+        <p id="feelsLike"></p>
+        <p>It might get as cold as</p>
+        <p id="temperatureLow"></p>
 
 
     </div>
 
-<div class = "footer">
+<div class = "footer center">
     <button id="refreshButton" class="unloaded center" onclick="location.reload()">Pick new city</button>
 </div>
+
+
 
     <script src="IMJB.js"></script>
 </body>

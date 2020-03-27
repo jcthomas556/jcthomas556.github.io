@@ -7,12 +7,13 @@ function display() {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
             var obj = JSON.parse(this.responseText);
-
-            console.log(obj.base);
-            console.log(obj.weather[0].main);
-
+            console.log(obj);
             var result = JSON.stringify(obj);
             document.getElementById("weatherMain").innerText = obj.weather[0].main;
+            console.log(obj.main.temp);
+            document.getElementById("temperature").innerText = getTemperature(obj.main.temp);
+            document.getElementById("feelsLike").innerText = getTemperature(obj.main.feels_like);
+            document.getElementById("temperatureLow").innerText = getTemperature(obj.main.temp_min);
         }
     };
 
@@ -38,3 +39,11 @@ function screenChanger() {
     }
 
 }
+
+function getTemperature(temperature){
+    farenTemp = temperature - 273.15;
+    farenTemp = farenTemp * 9/5 + 32;
+
+    return Math.trunc(farenTemp);
+}
+

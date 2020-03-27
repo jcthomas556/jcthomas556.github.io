@@ -18,25 +18,74 @@
 
 }
 
-.myDIV {
-    width: 100%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: lightblue;
-    margin-top: 20px;
-    display: none;
-}
+
 
 .footer {
-    
+
     left: 0;
     bottom: 0;
-    width: 100%;
-   
+    width: 20%;
+    background-color: cornsilk;
+    border-radius: 25px;
+    padding: 1px; 
     text-align: center;
 }
 
-.main{
-    padding-bottom: 350px;
+.main {
+    padding-bottom: 150px;
+    background-color: cornsilk;
+    border-radius: 25px;
+    padding: 1px; 
     
 }
+
+body {
+    font-size: 150%;
+    font-family: 'Gotu', sans-serif;
+    animation: fadeInAnimation ease 7s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    background-color: cornflowerblue;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#weatherMain {
+    animation: 3s ease-in-out .25s 1 shrink;
+    font-size: 220%;
+    
+}
+
+@keyframes shrink{
+    0%{
+        transform: scale(20);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+#temperature {
+    animation: 3s ease-in-out .25s 1 shrink;
+    font-size: 220%;
+}
+
+#feelsLike {
+    animation: 3s ease-in-out .25s 1 shrink;
+    font-size: 220%;
+}
+
+#temperatureLow {
+    animation: 3s ease-in-out .25s 1 shrink;
+    font-size: 220%;
+}
+
