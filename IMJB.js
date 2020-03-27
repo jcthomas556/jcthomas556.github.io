@@ -1,6 +1,6 @@
 function display() {
     var userInput = document.getElementById("mName").value;
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&appid=2a305cfee9eeaa017e35ea84424ffccc";
+    var url = "https://api.openweathermap.org/data/2.5/weather?q=" + userInput + "&appid=2a305cfee9eeaa017e35ea84424ffccc";
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
